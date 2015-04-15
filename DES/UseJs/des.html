@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="des.js"></script>
+    <script type="text/javascript" src="./jquery-1.7.2.min.js"></script>
+    <script>
+        $(function(){
+            $("#sendBtn").click(function(){
+                var key ="12345678";
+                var message = "1111111111111@#$%%+-/1";
+                var ciphertext = stringToHex(des (key, message, 1, 0));
+                $.post("dealWithData.php", { key: key, message: ciphertext },
+                        function(data){
+                          $("#result").html(data);
+                        });
+            });
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="获取加密结果与解密结果" id="sendBtn" />
+    <table>
+        <tr>
+          <td align="left">信息：</td>
+          <td><span id="str">This is something private</span></td>
+        </tr>
+        <tr>
+          <td align="left">密钥：</td>
+          <td><span id="key">12345678</span></td>
+        </tr>
+        <tr>
+            <td align="left">结果：</td>
+            <td><span id="result"></span></td>
+        </tr>
+    </table>
+</body>
+</html>
