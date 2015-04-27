@@ -7,6 +7,7 @@ $unencrypted = trim(mcrypt_decrypt(MCRYPT_DES
     , safeHexToString($encrypted)
     , MCRYPT_MODE_ECB));
 
+
 echo $unencrypted;exit;
 /**
  *
