@@ -2,7 +2,7 @@
 include 'websocket.class.php';
 
 $config=array(
-  'address'=>'192.168.0.200',
+  'address'=>'192.168.214.185',
   'port'=>'8000',
   'event'=>'WSevent',//回调函数的函数名
   'log'=>true,
