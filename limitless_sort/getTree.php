@@ -65,7 +65,7 @@ print_r(genTree9($items));
 
 
 /**
-  使用该方法需要先做一层数据处理
+  notice  使用该方法需要先做一层数据处理
   $items = [];
   foreach ($tmpMap as $tmp) {
     $items[$tmp[$id]] = $tmp;
