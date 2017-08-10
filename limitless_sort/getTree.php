@@ -39,7 +39,7 @@ function genTree9($items)
 $items = array(
     1 => array('id' => 1, 'pid' => 0, 'name' => '江西省'),
     2 => array('id' => 2, 'pid' => 0, 'name' => '黑龙江省'),
-    3 => array('id' => 3, 'pid' => 1, 'name' => '南昌市'),
+    //3 => array('id' => 3, 'pid' => 1, 'name' => '南昌市'),
     4 => array('id' => 4, 'pid' => 2, 'name' => '哈尔滨市'),
     5 => array('id' => 5, 'pid' => 2, 'name' => '鸡西市'),
     6 => array('id' => 6, 'pid' => 4, 'name' => '香坊区'),
