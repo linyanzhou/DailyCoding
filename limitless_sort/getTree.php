@@ -1,24 +1,23 @@
 <?php
-function genTree($items, $id = 'id', $pid = 'pid', $son = 'children')
-{
+function genTree($items){
     $tree = array(); //格式化的树
     $tmpMap = array();  //临时扁平数据
 
     foreach ($items as $item) {
-        $tmpMap[$item[$id]] = $item;
+        $tmpMap[$item['id']] = $item;
     }
 
     foreach ($items as $item) {
-        if (isset($tmpMap[$item[$pid]])) {
-            $tmpMap[$item[$pid]][$son][] = &$tmpMap[$item[$id]];
+        if (isset($tmpMap[$item['pid']])) {
+            $tmpMap[$item['pid']]['children'][] = &$tmpMap[$item['id']];
         } else {
-            $tree[] = &$tmpMap[$item[$id]];
+            $tree[] = &$tmpMap[$item['id']];
         }
     }
     unset($tmpMap);
-
     return $tree;
 }
+
 
 $items1 = array(
     array('id' => 1, 'pid' => 0, 'name' => '一级11'),
