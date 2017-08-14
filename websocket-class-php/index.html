@@ -15,7 +15,7 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script>
 function link(){
-  var url='ws://192.168.214.185';
+  var url='ws://192.168.214.185:8000';
   socket=new WebSocket(url);
   socket.onopen=function(){log('连接成功')}
   socket.onmessage=function(msg){log('获得消息:'+msg.data);console.log(msg);}
