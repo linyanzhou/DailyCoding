@@ -31,6 +31,6 @@ function binarySearch($arr, $target)
 }
 
 $arr = array(1, 3, 5, 7, 9, 11);
-$inx = binarySearch($arr, 11);
+$inx = binarySearch($arr, 7);
 var_dump($inx);
 
