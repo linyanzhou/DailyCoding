@@ -1,4 +1,11 @@
 <?php
+/**
+ * 快速排序
+ * 参考文档：http://www.cnblogs.com/lijiageng/p/5867866.html
+ * 参考文档：https://www.cnblogs.com/eniac12/p/5329396.html
+ * @param $arr
+ * @return array
+ */
 function quick_sort($arr)
 {
     //先判断是否需要继续进行
