@@ -1,7 +1,14 @@
 <?php
 
 /**
- * 类 使用继承
+ * 类 使用继承  public private protected 等关键字
+ * 属性与方法
+ * public 在类内部 或者 类生产对象 均可以访问
+ *
+ * private 当前类内部 能访问属性或者方法  子类不能继承（属性和方法均不能继承）
+ *
+ * protected 当前类 或者 子类 内部能访问属性或者方法  类生成对象后无法访问
+ *
  * Class ShopProduct
  */
 class ShopProduct

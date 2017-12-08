@@ -1,7 +1,14 @@
 <?php
 
 /**
- * 类 使用继承
+ * 类 使用继承  public private protected 等关键字
+ * 属性与方法
+ * public 在类内部 或者 类生产对象 均可以访问
+ *
+ * private 当前类内部 能访问属性或者方法  子类不能继承（属性和方法均不能继承）
+ *
+ * protected 当前类 或者 子类 内部能访问属性或者方法  类生成对象后无法访问
+ *
  * Class ShopProduct
  */
 class ShopProduct
@@ -9,7 +16,7 @@ class ShopProduct
     public $title;
     public $producerMainName;
     public $producerFirstName;
-    public $price;
+    protected $price;
 
     function __construct($title, $firstName, $mainName, $price)
     {
@@ -60,7 +67,8 @@ class CDProduct extends ShopProduct
 
 class BookProduct extends ShopProduct
 {
-    protected $numPages = 100;
+    private $numPages = 100;
+    protected  $numPages2 = 200;
 
     function __construct($title, $firstName, $mainName, $price)
     {
@@ -70,6 +78,10 @@ class BookProduct extends ShopProduct
 
     function getNumPages(){
         return $this->numPages;
+    }
+
+    function getNumPages2(){
+        return $this->numPages2;
     }
 
     function getSummaryLine()
@@ -83,7 +95,7 @@ class BookProduct extends ShopProduct
 }
 $book = new BookProduct('My Antonia','Willa','Cather',5.99,10);
 
-print($book->getSummaryLine());
+print($book->title);
 exit;
 
 
