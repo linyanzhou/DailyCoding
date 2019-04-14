@@ -31,16 +31,16 @@ class CustomerClass
         foreach ($aRentals as $k => $oRentals) {
             $iThisAmount = 0;
             switch ($oRentals->getMovie()->getPriceCode()) {
-                case 0:
+                case MovieClass::$regular:
                     $iThisAmount += 2;
                     if ($oRentals->getDayRented() > 2) {
                         $iThisAmount += ($oRentals->getDayRented() - 2) * 1.5;
                     }
                     break;
-                case 1:
+                case MovieClass::$newRelease:
                     $iThisAmount = $iThisAmount + ($oRentals->getDayRented() * 3);
                     break;
-                case 2:
+                case MovieClass::$children:
                     $iThisAmount += 1.5;
                     if ($oRentals->getDayRented() > 2) {
                         $iThisAmount += ($oRentals->getDayRented() - 3) * 1.5;
@@ -54,7 +54,7 @@ class CustomerClass
         }
 
         $sResult .= " Amount owed is " . $iTotalAmount;
-        $sResult .= " You earned " . $iFrequentRenterPoint." frequent renter point";
+        $sResult .= " You earned " . $iFrequentRenterPoint . " frequent renter point";
 
         return $sResult;
     }
